@@ -1,4 +1,4 @@
-const books = [{ title: 'title1', author: 'author1' }, { title: 'title2', author: 'author2' }];
+let books = [{ title: 'title1', author: 'author1' }, { title: 'title2', author: 'author2' }];
 
 const addBook = (title, author) => {
   const book = { title, author };
@@ -6,18 +6,21 @@ const addBook = (title, author) => {
 };
 
 const removeBook = (title) => {
-  books.filter((book) => book.title !== title);
+  books = books.filter((book) => book.title !== title);
 };
 
 // This function receive a book object return book div
 const createBookDiv = (book) => {
   const bookDiv = document.createElement('div');
+  bookDiv.setAttribute('class', 'bookDiv')
   const title = document.createElement('p');
   title.textContent = book.title;
   const author = document.createElement('p');
   author.textContent = book.author;
   const delBtn = document.createElement('button');
+  delBtn.setAttribute('id',book.title)
   delBtn.textContent = 'Remove';
+  delBtn.setAttribute('class', 'delete')
   const hr = document.createElement('hr');
   bookDiv.append(title, author, delBtn, hr);
   return bookDiv;
@@ -46,3 +49,17 @@ document.querySelector('#book-form').addEventListener('submit', (event) => {
   showBooks();
   clearInputs();
 });
+
+
+document.querySelector('#books-list').onclick = (event) => {
+  if (event.target.className === 'delete') {
+    const bookDiv = event.target.closest('.bookDiv');
+    const id = bookDiv.querySelector('.delete').id
+    removeBook(id)
+    bookDiv.remove();
+  }
+};
+
+
+
+document.addEventListener('DOMContentLoaded', showBooks); 
