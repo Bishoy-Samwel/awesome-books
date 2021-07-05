@@ -48,14 +48,15 @@ Feel free to check the [issues page](https://github.com/Bishoy-Samwel/awesome-bo
 
 👤 **Bishoy Samwel**
 
-* GitHub: [@githubhandle](https://github.com/Bishoy-Samwel)
-* LinkedIn: [LinkedIn](https://www.linkedin.com/in/bishoy-samwuel-ss/)
+- GitHub: [@Bishoy Samwel Faheem](https://github.com/Bishoy-Samwel)
+- LinkedIn: [Bishoy Samwel](https://www.linkedin.com/in/bishoy-samwuel-ss/)
+- Twitter: [@bisho](https://twitter.com/BishoFaheem15)
 
 👤 **Lameck Otieno**
 
-* GitHub: [@githubhandle](https://github.com/Lameck1)
-* Twitter: [@twitterhandle](https://twitter.com/lameck721)
-* LinkedIn: [LinkedIn](https://www.linkedin.com/in/lameck-odhiambo-642b7077/)
+* GitHub: [@Lameck1](https://github.com/Lameck1)
+* Twitter: [@lameck721](https://twitter.com/lameck721)
+* LinkedIn: [lameck-odhiambo](https://www.linkedin.com/in/lameck-odhiambo-642b7077/)
 * Portfolio: [Portfolio](https://lameck.me)
 
 ## Acknowledgements
