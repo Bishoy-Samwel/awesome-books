@@ -1,15 +1,25 @@
-let books = JSON.parse(localStorage.getItem('books')) || [];
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
 
-const addBook = (title, author) => {
-  const book = { title, author };
-  books.push(book);
-  localStorage.setItem('books', JSON.stringify(books));
-};
+  static books = JSON.parse(localStorage.getItem('books')) || [];
 
-const removeBook = (title) => {
-  books = books.filter((book) => book.title !== title);
-  localStorage.setItem('books', JSON.stringify(books));
-};
+  static addBook(book) {
+    Book.books.push(book);
+    localStorage.setItem('books', JSON.stringify(Book.books));
+  }
+
+  static removeBook(title) {
+    Book.books = Book.books.filter((book) => book.title !== title);
+    localStorage.setItem('books', JSON.stringify(Book.books));
+  }
+
+  static exist(title) {
+    return Book.books.find((book) => book.title === title);
+  }
+}
 
 // This function receive a book object return book div
 const createBookDiv = (book) => {
@@ -32,7 +42,7 @@ const createBookDiv = (book) => {
 const showBooks = () => {
   const bookList = document.querySelector('#books-list');
   const booksDiv = document.createElement('div');
-  books.forEach((book) => {
+  Book.books.forEach((book) => {
     booksDiv.appendChild(createBookDiv(book));
   });
   bookList.innerHTML = '';
@@ -48,7 +58,10 @@ document.querySelector('#book-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  addBook(title, author);
+  if (!Book.exist(title)) {
+    const book = new Book(title, author);
+    Book.addBook(book);
+  }
   showBooks();
   clearInputs();
 });
@@ -57,7 +70,7 @@ document.querySelector('#books-list').onclick = (event) => {
   if (event.target.className === 'delete') {
     const bookDiv = event.target.closest('.bookDiv');
     const { id } = bookDiv.querySelector('.delete');
-    removeBook(id);
+    Book.removeBook(id);
     bookDiv.remove();
   }
 };
