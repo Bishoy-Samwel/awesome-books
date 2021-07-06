@@ -6,13 +6,12 @@ class Book {
     this.author = author;
   }
 
-  addBook = (title, author) => {
-    const book = { title, author };
-    books.push(book);
+  addBook = () => {
+    books.push(this);
     localStorage.setItem('books', JSON.stringify(books));
   };
   
-  removeBook = (title) => {
+  static removeBook = (title) => {
     books = books.filter((book) => book.title !== title);
     localStorage.setItem('books', JSON.stringify(books));
   };
@@ -62,7 +61,8 @@ document.querySelector('#book-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  addBook(title, author);
+  book = new Book(title,author)
+  book.addBook();
   showBooks();
   clearInputs();
 });
@@ -71,7 +71,7 @@ document.querySelector('#books-list').onclick = (event) => {
   if (event.target.className === 'delete') {
     const bookDiv = event.target.closest('.bookDiv');
     const { id } = bookDiv.querySelector('.delete');
-    removeBook(id);
+    Book.removeBook(id);
     bookDiv.remove();
   }
 };
