@@ -1,15 +1,29 @@
 let books = JSON.parse(localStorage.getItem('books')) || [];
 
-const addBook = (title, author) => {
-  const book = { title, author };
-  books.push(book);
-  localStorage.setItem('books', JSON.stringify(books));
-};
+class Book {
+  constructor (title, author) {
+    this.title = title;
+    this.author = author;
+  }
 
-const removeBook = (title) => {
-  books = books.filter((book) => book.title !== title);
-  localStorage.setItem('books', JSON.stringify(books));
-};
+  addBook = (title, author) => {
+    const book = { title, author };
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+  };
+  
+  removeBook = (title) => {
+    books = books.filter((book) => book.title !== title);
+    localStorage.setItem('books', JSON.stringify(books));
+  };
+
+}
+
+
+
+
+
+
 
 // This function receive a book object return book div
 const createBookDiv = (book) => {
