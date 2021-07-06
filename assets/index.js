@@ -1,28 +1,21 @@
 let books = JSON.parse(localStorage.getItem('books')) || [];
 
 class Book {
-  constructor (title, author) {
+  constructor(title, author) {
     this.title = title;
     this.author = author;
   }
 
-  addBook = () => {
+  addBook() {
     books.push(this);
     localStorage.setItem('books', JSON.stringify(books));
-  };
-  
-  static removeBook = (title) => {
+  }
+
+  static removeBook(title) {
     books = books.filter((book) => book.title !== title);
     localStorage.setItem('books', JSON.stringify(books));
-  };
-
+  }
 }
-
-
-
-
-
-
 
 // This function receive a book object return book div
 const createBookDiv = (book) => {
@@ -61,7 +54,7 @@ document.querySelector('#book-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  book = new Book(title,author)
+  const book = new Book(title, author);
   book.addBook();
   showBooks();
   clearInputs();
