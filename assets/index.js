@@ -1,19 +1,19 @@
-let books = JSON.parse(localStorage.getItem('books')) || [];
-
 class Book {
   constructor(title, author) {
     this.title = title;
     this.author = author;
   }
 
-  addBook() {
-    books.push(this);
-    localStorage.setItem('books', JSON.stringify(books));
+  static books = JSON.parse(localStorage.getItem('books')) || [];
+
+  static addBook(book) {
+    Book.books.push(book);
+    localStorage.setItem('books', JSON.stringify(Book.books));
   }
 
   static removeBook(title) {
-    books = books.filter((book) => book.title !== title);
-    localStorage.setItem('books', JSON.stringify(books));
+    Book.books = Book.books.filter((book) => book.title !== title);
+    localStorage.setItem('books', JSON.stringify(Book.books));
   }
 }
 
@@ -38,7 +38,7 @@ const createBookDiv = (book) => {
 const showBooks = () => {
   const bookList = document.querySelector('#books-list');
   const booksDiv = document.createElement('div');
-  books.forEach((book) => {
+  Book.books.forEach((book) => {
     booksDiv.appendChild(createBookDiv(book));
   });
   bookList.innerHTML = '';
@@ -55,7 +55,7 @@ document.querySelector('#book-form').addEventListener('submit', (event) => {
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
   const book = new Book(title, author);
-  book.addBook();
+  Book.addBook(book);
   showBooks();
   clearInputs();
 });
