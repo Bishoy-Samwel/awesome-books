@@ -15,6 +15,10 @@ class Book {
     Book.books = Book.books.filter((book) => book.title !== title);
     localStorage.setItem('books', JSON.stringify(Book.books));
   }
+
+  static exist(title){
+   return Book.books.find((book) => book.title === title);
+  }
 }
 
 // This function receive a book object return book div
@@ -54,8 +58,10 @@ document.querySelector('#book-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  const book = new Book(title, author);
-  Book.addBook(book);
+  if (!Book.exist(title)){
+    const book = new Book(title, author);
+    Book.addBook(book);
+  }
   showBooks();
   clearInputs();
 });
