@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/style.css">
   <title>Awesome Books</title>
 </head>
 <body>
-  <h1>Awesome Books</h1>
-  <section id="books-list">
-
-  </section>
-  <form action="post" id="book-form">
-    <input type="text" name="title" placeholder="Title" id="title">
-    <input type="text" name="author" placeholder="Author" id="author">
-    <input type="submit" value="Add">
-  </form>
+  <main class=".d-flex">
+    <h1>Awesome Books</h1>
+    <section id="books-list">
+    </section>
+    <hr>
+    <h3>Add a new Book</h3>
+    <form class="d-flex" action="post" id="book-form">
+      <input type="text" name="title" placeholder="Title" id="title">
+      <input type="text" name="author" placeholder="Author" id="author">
+      <input type="submit" value="Add">
+    </form>
+  </main>
   <script src="assets/index.js"></script>
 </body>
 </html>

@@ -1,3 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
 body {
-  background-color: #fff;
+  background: #f0f0f0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+}
+
+html {
+  font-size: 100%;
+}
+
+main {
+  max-width: 40%;
+  margin: auto;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+}
+
+#books-div {
+  flex-direction: column;
+  border: 1px solid #000;
+  min-height: 5vh;
+}
+
+.bookDiv {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+  font-weight: 500;
+}
+
+.bookDiv:nth-child(odd) {
+  background: rgb(230, 230, 230);
+}
+
+.bookDiv:nth-child(even) {
+  background: rgb(255, 255, 255);
+}
+
+h1,
+h3 {
+  text-align: center;
+}
+
+form {
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+input {
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.1rem;
+  outline: none;
+  border: none;
+}
+
+input[type=text] {
+  margin-bottom: 2%;
+}
+
+input[type=submit] {
+  align-self: flex-end;
+  padding: 1% 5%;
+}
+
+.delete,
+input[type=submit] {
+  box-shadow: 4px 4px #888;
+  font-weight: 550;
+}
+
+.delete:hover,
+input[type=submit]:hover {
+  background-color: bisque;
+  color: brown;
+  box-shadow: 2px 2px #b9b9b9;
+}
+
+hr {
+  width: 10vw;
+  border: 1px solid #000;
+  background-color: #000;
+}
+
+.author {
+  font-style: italic;
+  font-weight: 600;
 }
