@@ -24,17 +24,15 @@ class Book {
 // This function receive a book object return book div
 const createBookDiv = (book) => {
   const bookDiv = document.createElement('div');
-  bookDiv.setAttribute('class', 'bookDiv');
-  const title = document.createElement('p');
-  title.textContent = book.title;
-  const author = document.createElement('p');
-  author.textContent = book.author;
+  bookDiv.setAttribute('class', 'bookDiv d-flex');
+
+  const bookInfo = document.createElement('p');
+  bookInfo.textContent = `${book.title} by ${book.author}`;
   const delBtn = document.createElement('button');
   delBtn.setAttribute('id', book.title);
   delBtn.textContent = 'Remove';
   delBtn.setAttribute('class', 'delete');
-  const hr = document.createElement('hr');
-  bookDiv.append(title, author, delBtn, hr);
+  bookDiv.append(bookInfo, delBtn);
   return bookDiv;
 };
 
@@ -42,6 +40,8 @@ const createBookDiv = (book) => {
 const showBooks = () => {
   const bookList = document.querySelector('#books-list');
   const booksDiv = document.createElement('div');
+  booksDiv.setAttribute('class', 'd-flex')
+  booksDiv.setAttribute('id', 'books-div')
   Book.books.forEach((book) => {
     booksDiv.appendChild(createBookDiv(book));
   });
