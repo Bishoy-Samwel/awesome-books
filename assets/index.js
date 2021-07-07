@@ -16,8 +16,8 @@ class Book {
     localStorage.setItem('books', JSON.stringify(Book.books));
   }
 
-  static exist(title){
-   return Book.books.find((book) => book.title === title);
+  static exist(title) {
+    return Book.books.find((book) => book.title === title);
   }
 }
 
@@ -58,7 +58,7 @@ document.querySelector('#book-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  if (!Book.exist(title)){
+  if (!Book.exist(title)) {
     const book = new Book(title, author);
     Book.addBook(book);
   }
