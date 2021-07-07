@@ -1,3 +1,25 @@
 body {
-  background-color: #fff;
+  background-color: #f0f0f0;
+}
+
+main {
+  max-width: 60%;
+  margin: auto  ;
+}
+
+.d-flex{
+  display: flex;
+  justify-content: center;
+}
+
+#books-div{
+  flex-direction: column;
+}
+
+.bookDiv{
+  justify-content: space-between;
+}
+
+h1{
+  text-align: center;
 }
