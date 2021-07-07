@@ -23,24 +23,27 @@ main {
 
 #books-div {
   flex-direction: column;
-  border: 1px solid #000000;
+  border: 1px solid #000;
+  min-height: 5vh;
 }
 
 .bookDiv {
   justify-content: space-between;
   align-items: center;
   padding: 0 3%;
+  font-weight: 500;
 }
 
-.bookDiv:nth-child(odd){
+.bookDiv:nth-child(odd) {
   background: rgb(230, 230, 230);
 }
 
-.bookDiv:nth-child(even){
+.bookDiv:nth-child(even) {
   background: rgb(255, 255, 255);
 }
 
-h1, h3 {
+h1,
+h3 {
   text-align: center;
 }
 
@@ -68,12 +71,26 @@ input[type=submit] {
   padding: 1% 5%;
 }
 
-.delete, input[type=submit] {
-  box-shadow: 4px 4px #888888;
+.delete,
+input[type=submit] {
+  box-shadow: 4px 4px #888;
+  font-weight: 550;
 }
 
-.delete:hover, input[type=submit]:hover {
+.delete:hover,
+input[type=submit]:hover {
   background-color: bisque;
   color: brown;
   box-shadow: 2px 2px #b9b9b9;
+}
+
+hr {
+  width: 10vw;
+  border: 1px solid #000;
+  background-color: #000;
+}
+
+.author {
+  font-style: italic;
+  font-weight: 600;
 }
