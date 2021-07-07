@@ -15,7 +15,7 @@ Awesome Library is a mini book library project tha allows a user to add books, a
 
 <!-- ![screenshot](./screenshot.png) -->
 
-<!-- ## [Live Demo]() -->
+## [Live Demo](https://bishoy-samwel.github.io/awesome-books/)
 
 ## Built With
 
