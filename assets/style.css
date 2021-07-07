@@ -4,7 +4,6 @@ body {
   background: #f0f0f0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  padding-top: 40px;
   min-height: 100vh;
 }
 
@@ -24,13 +23,24 @@ main {
 
 #books-div {
   flex-direction: column;
+  border: 1px solid #000000;
 }
 
 .bookDiv {
   justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
 }
 
-h1 {
+.bookDiv:nth-child(odd){
+  background: rgb(230, 230, 230);
+}
+
+.bookDiv:nth-child(even){
+  background: rgb(255, 255, 255);
+}
+
+h1, h3 {
   text-align: center;
 }
 
@@ -38,7 +48,7 @@ form {
   flex-direction: column;
   width: 50%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 input {
@@ -55,4 +65,15 @@ input[type=text] {
 
 input[type=submit] {
   align-self: flex-end;
+  padding: 1% 5%;
+}
+
+.delete, input[type=submit] {
+  box-shadow: 4px 4px #888888;
+}
+
+.delete:hover, input[type=submit]:hover {
+  background-color: bisque;
+  color: brown;
+  box-shadow: 2px 2px #b9b9b9;
 }
