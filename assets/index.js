@@ -27,7 +27,7 @@ const createBookDiv = (book) => {
   bookDiv.setAttribute('class', 'bookDiv d-flex');
 
   const bookInfo = document.createElement('p');
-  bookInfo.textContent = `${book.title} by ${book.author}`;
+  bookInfo.innerHTML = `"${book.title}" by <span class="author">${book.author}</span>`;
   const delBtn = document.createElement('button');
   delBtn.setAttribute('id', book.title);
   delBtn.textContent = 'Remove';
@@ -40,8 +40,8 @@ const createBookDiv = (book) => {
 const showBooks = () => {
   const bookList = document.querySelector('#books-list');
   const booksDiv = document.createElement('div');
-  booksDiv.setAttribute('class', 'd-flex')
-  booksDiv.setAttribute('id', 'books-div')
+  booksDiv.setAttribute('class', 'd-flex');
+  booksDiv.setAttribute('id', 'books-div');
   Book.books.forEach((book) => {
     booksDiv.appendChild(createBookDiv(book));
   });
