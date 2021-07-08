@@ -13,9 +13,9 @@
     <nav id="nav" class="d-flex">
       <span id="logo">Awesome Books</span>
       <ul id="nav-links" class="d-flex flex-fit">
-        <li id="list">List</li>
-        <li id="add-new">Add New</li>
-        <li id="contact">Contact</li>
+        <li id="list" class="nav-btn">List</li>
+        <li id="add-new"  class="nav-btn" >Add New</li>
+        <li id="contact"  class="nav-btn">Contact</li>
       </ul>
     </nav>
     <p id="time"></p>
@@ -25,13 +25,17 @@
     <h1>Awesome Books</h1>
     <section id="books-list">
     </section>
-    <hr>
-    <h3>Add a new Book</h3>
-    <form class="d-flex" action="post" id="book-form">
-      <input type="text" name="title" placeholder="Title" id="title">
-      <input type="text" name="author" placeholder="Author" id="author">
-      <input type="submit" value="Add">
-    </form>
+    <section id='book-form' class="d-none">
+      <h3>Add a new Book</h3>
+      <form class="d-flex" action="post" id="book-form">
+        <input type="text" name="title" placeholder="Title" id="title">
+        <input type="text" name="author" placeholder="Author" id="author">
+        <input type="submit" value="Add">
+      </form>
+    </section>
+    <section id='contact-sec' class="d-none">
+      
+    </section>
   </main>
 
   <footer>
