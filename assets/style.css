@@ -38,13 +38,19 @@ header {
 
 #nav-links li,
 #logo {
-  margin-left: 1%;
+  margin-left: 3%;
   color: #fff;
   font-size: 1.3rem;
 }
 
 #nav-links li {
   font-weight: 500;
+  cursor: pointer;
+}
+
+#nav-links li:hover{
+  font-weight: 550;
+  border-bottom: 1px solid #000000;
 }
 
 main {
@@ -125,13 +131,11 @@ input[type=submit]:hover {
   box-shadow: 2px 2px #b9b9b9;
 }
 
-hr {
-  width: 10vw;
-  border: 1px solid #000;
-  background-color: #000;
-}
-
 .author {
   font-style: italic;
   font-weight: 600;
+}
+
+.d-none{
+  display: none;
 }
