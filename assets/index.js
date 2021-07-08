@@ -1,5 +1,3 @@
-let DateTime = luxon.DateTime;
-
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -57,20 +55,20 @@ const clearInputs = () => {
 };
 
 // nav-btn id => section id
-var nav_section_dict = {
-  'list': "books-list",
-  "add-new": "book-form",
-  "contact": "contact-sec"
+const navSectionDict = {
+  list: 'books-list',
+  'add-new': 'book-form-sec',
+  contact: 'contact-sec',
 };
 const showSection = (id) => {
-  document.querySelectorAll('section').forEach((ele) => ele.classList.add('d-none'))
-  document.querySelector(`#${nav_section_dict[id]}`).classList.remove('d-none')
+  document.querySelectorAll('section').forEach((ele) => ele.classList.add('d-none'));
+  document.querySelector(`#${navSectionDict[id]}`).classList.remove('d-none');
 };
 
-const updateTime= () => {
-  let date = new Date();
-  document.querySelector('#time').textContent= date.toGMTString();
-}
+const updateTime = () => {
+  const date = new Date();
+  document.querySelector('#time').textContent = date.toGMTString();
+};
 
 document.querySelector('#book-form').addEventListener('submit', (event) => {
   event.preventDefault();
@@ -95,13 +93,13 @@ document.querySelector('#books-list').onclick = (event) => {
 
 document.querySelector('#nav-links').onclick = (event) => {
   if (event.target.className === 'nav-btn') {
-    showSection(event.target.id)
+    showSection(event.target.id);
   }
 };
 
 // document.addEventListener('DOMContentLoaded', showBooks,updateTime);
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
   updateTime();
   showBooks();
 });
