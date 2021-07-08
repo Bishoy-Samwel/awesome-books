@@ -54,6 +54,22 @@ const clearInputs = () => {
   document.querySelector('#author').value = '';
 };
 
+// nav-btn id => section id
+const navSectionDict = {
+  list: 'books-list',
+  'add-new': 'book-form-sec',
+  contact: 'contact-sec',
+};
+const showSection = (id) => {
+  document.querySelectorAll('section').forEach((ele) => ele.classList.add('d-none'));
+  document.querySelector(`#${navSectionDict[id]}`).classList.remove('d-none');
+};
+
+const updateTime = () => {
+  const date = new Date();
+  document.querySelector('#time').textContent = date.toGMTString();
+};
+
 document.querySelector('#book-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const title = document.querySelector('#title').value;
@@ -75,4 +91,15 @@ document.querySelector('#books-list').onclick = (event) => {
   }
 };
 
-document.addEventListener('DOMContentLoaded', showBooks);
+document.querySelector('#nav-links').onclick = (event) => {
+  if (event.target.className === 'nav-btn') {
+    showSection(event.target.id);
+  }
+};
+
+// document.addEventListener('DOMContentLoaded', showBooks,updateTime);
+
+window.addEventListener('DOMContentLoaded', () => {
+  updateTime();
+  showBooks();
+});

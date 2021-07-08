@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,63 @@
   <link rel="stylesheet" href="assets/style.css">
   <title>Awesome Books</title>
 </head>
+
 <body>
+
+  <header>
+    <nav id="nav" class="d-flex">
+      <span id="logo">Awesome Books</span>
+      <ul id="nav-links" class="d-flex flex-fit">
+        <li id="list" class="nav-btn">List</li>
+        <li id="add-new" class="nav-btn">Add New</li>
+        <li id="contact" class="nav-btn">Contact</li>
+      </ul>
+    </nav>
+    <p id="time"></p>
+  </header>
+
   <main class=".d-flex">
     <h1>Awesome Books</h1>
     <section id="books-list">
     </section>
-    <hr>
-    <h3>Add a new Book</h3>
-    <form class="d-flex" action="post" id="book-form">
-      <input type="text" name="title" placeholder="Title" id="title">
-      <input type="text" name="author" placeholder="Author" id="author">
-      <input type="submit" value="Add">
-    </form>
+    <section id='book-form-sec' class="d-none">
+      <h3>Add a new Book</h3>
+      <form class="d-flex" action="post" id="book-form">
+        <input type="text" name="title" placeholder="Title" id="title">
+        <input type="text" name="author" placeholder="Author" id="author">
+        <input type="submit" value="Add">
+      </form>
+    </section>
+    <section id='contact-sec' class="d-none">
+      <h3>Contact info</h3>
+      <p>Have any questions? Feel free to contact us through any of these:</p>
+      <ul>
+        <li>&#10038; Email: awesome@gmail.com</li>
+        <li>&#10038; Phone: (020) 458-488</li>
+        <li>&#10038; Address: Awesome-Street 16, 90400, Awesome City, Awesome Country </li>
+      </ul>
+
+      <h4>Creators</h4>
+
+      <ul>
+        <li class="creator">&#10038; <a href="https://www.linkedin.com/in/bishoy-samwuel-ss/" target="_blank"
+            rel="noopener noreferrer">Bishoy Samwel</a></li>
+        <li class="creator">&#10038; <a href="https://www.linkedin.com/in/lameck-otieno/" target="_blank"
+            rel="noopener noreferrer">Lameck Otieno</a></li>
+      </ul>
+    </section>
   </main>
+
+  <footer class="d-flex flex-fit">
+    &copy; <small>Awesome Books - <a href="https://www.linkedin.com/in/bishoy-samwuel-ss/" target="_blank"
+        rel="noopener noreferrer">Bishoy</a> | <a href="https://www.linkedin.com/in/lameck-otieno/" target="_blank"
+        rel="noopener noreferrer">Lameck</a></small>
+  </footer>
+  
+  <script src="assets/luxon.js"></script>
+
   <script src="assets/index.js"></script>
+
 </body>
+
 </html>
