@@ -1,3 +1,5 @@
+let DateTime = luxon.DateTime;
+
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -65,6 +67,11 @@ const showSection = (id) => {
   document.querySelector(`#${nav_section_dict[id]}`).classList.remove('d-none')
 };
 
+const updateTime= () => {
+  let date = new Date();
+  document.querySelector('#time').textContent= date.toGMTString();
+}
+
 document.querySelector('#book-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const title = document.querySelector('#title').value;
@@ -92,4 +99,9 @@ document.querySelector('#nav-links').onclick = (event) => {
   }
 };
 
-document.addEventListener('DOMContentLoaded', showBooks);
+// document.addEventListener('DOMContentLoaded', showBooks,updateTime);
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  updateTime();
+  showBooks();
+});
