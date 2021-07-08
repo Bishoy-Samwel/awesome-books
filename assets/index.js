@@ -54,6 +54,17 @@ const clearInputs = () => {
   document.querySelector('#author').value = '';
 };
 
+// nav-btn id => section id
+var nav_section_dict = {
+  'list': "books-list",
+  "add-new": "book-form",
+  "contact": "contact-sec"
+};
+const showSection = (id) => {
+  document.querySelectorAll('section').forEach((ele) => ele.classList.add('d-none'))
+  document.querySelector(`#${nav_section_dict[id]}`).classList.remove('d-none')
+};
+
 document.querySelector('#book-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const title = document.querySelector('#title').value;
@@ -72,6 +83,12 @@ document.querySelector('#books-list').onclick = (event) => {
     const { id } = bookDiv.querySelector('.delete');
     Book.removeBook(id);
     bookDiv.remove();
+  }
+};
+
+document.querySelector('#nav-links').onclick = (event) => {
+  if (event.target.className === 'nav-btn') {
+    showSection(event.target.id)
   }
 };
 
